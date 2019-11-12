@@ -1,0 +1,36 @@
+&.debug .main-wrapper {
+  .min-height(1100px);
+  position: relative;
+
+  &.homepage::before,
+  .registration::before,
+  .thanks::before {
+    content  : "";
+    opacity  : 0.20;
+    top      : 0;
+    left     : 0;
+    right    : 0;
+    bottom   : 0;
+    position : absolute;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+
+  &.homepage::before {
+    background-image : url("../pexesoModule/images/devel/homepage.jpg");
+    //height: 2240px;
+  }
+
+  .registration::before {
+    background-image: url( "../pexesoModule/images/devel/registration.jpg");
+    //height: 2240px;
+  }
+
+  .thanks::before {
+    background-image : url("../pexesoModule/images/devel/thx.jpg");
+    //height: 2240px;
+  }
+
+}
+

@@ -1,0 +1,184 @@
+{*{control flashMessage}*}
+{*{block title}{_pexeso.title_homepage}{/block}*}
+{*{block title}{$title|striptags} | {_pexeso.title}{/block}*}
+
+{if !$presenter->isNiveaAjax()}
+	{block title}{$title}{/block}
+{/if}
+
+{block content|trim}
+<section class="homepage">
+	<div id="play-frame" class="container" data-anim="swing-out-top-bck" style="animation-delay: 800ms;" data-href="{$redirectTo|proxyLink}" data-ajax-url="{$redirectTo}" data-cache="true" data-package="{$package->name}">
+		{*{include "../#decorates.latte"}*}
+
+		<div class="part-title">
+			<div class="box">
+				{*<p n:if="$locale != hu" n:editable="pexeso.soutez" class="description text-primary">{_pexeso.soutez}</p>*}
+				{*<h2 n:editable="pexeso.frame_intro.soutezte" class="text-primary index-0">{_pexeso.frame_intro.soutezte}</h2>*}
+				{*<h2 n:editable="pexeso.frame_play.h2_text1" class="text-primary hidden index-1">{_pexeso.frame_play.h2_text1}</h2>*}
+				{*<h2 n:editable="pexeso.frame_play.h2_text2" class="text-primary hidden index-2">{_pexeso.frame_play.h2_text2}</h2>*}
+
+				<h2 n:article="pexeso.homepage.text1 header simple" class="text-primary hidden index-1">{article |noescape}</h2>
+				<h2 n:article="pexeso.homepage.text1 subHeader simple" class="text-primary hidden index-2">{article |noescape}</h2>
+
+				<p n:article="pexeso.homepage.text2 header text" class="description text-primary">{article |noescape}</p>
+				<h2 n:article="pexeso.homepage.text2 subHeader text" class="text-primary index-0">{article |noescape}</h2>
+
+
+				{*<img n:img="$images['a1']->namespace/$images['a1']->filename, 512x256, shrink_only" alt="{$images['a1']->alt}" class="img-responsive">*}
+
+				<div class="row">
+					<div class="col-md-offset-2 col-md-8">
+						<div id="top-help" class="clearfix">
+							<div class="wrap how-help">
+								<span class="how-box">
+
+
+{*									<img src="{$basePath}/resources/pexesoModule/images/cards-front/a1-front.png" alt="jak na to" class="img-responsive">*}
+{*									<img src="{$basePath}/resources/pexesoModule/images/jak_na_to.png" alt="jak na to" class="img-responsive">*}
+									<img n:image="'resources/pexesoModule/images/base/jak_na_to.png', '200x200', shrink_only" alt="jak na to" class="img-responsive">
+{*									<img n:image="'images/pexeso/jak_na_to.png', '200x200', shrink_only" alt="jak na to" class="img-responsive">*}
+								</span>
+							</div>
+							{*
+							<div class="wrap turn-help">
+								<span class="turn-box">
+									<img src="{$basePath}/images/otocte.png" class="img-responsive">
+								</span>
+							</div>
+							*}
+							<div class="find-help">
+								<span class="find-box">
+									<img n:image="'resources/pexesoModule/images/base/najdete_vsechny.png', '200x200', shrink_only" alt="najdete je vsechny" class="img-responsive">
+								</span>
+							</div>
+						</div>
+
+						{*<p n:editable="pexeso.frame_intro.text1" class="text-info text-description index-0">{_pexeso.frame_intro.text1|noescape}</p>*}
+						<div n:article="pexeso.homepage.text2 perex text" class="text-info text-description index-0">{article |noescape}</div>
+
+						{*<p class="text-primary text-description index-p">{_pexeso.frame_play.p_text1|noescape}</p>*}
+						{*<p class="text-primary text-description index-p">{_pexeso.frame_play.p_text2|noescape}</p>*}
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="part-content text-center img-preload" data-Qanim="blur">
+
+			{*{$debug|noescape}*}
+
+			<div class="row row-table-md">
+				<div id="col-first" class="col-md-2 col-xs-12"></div>
+				<div class="col-xs-12 col-md-8 p-0-md">
+					<div id="cards" class="row allow-click">
+						<ul class="col-card col-xs-12">
+							{foreach $shuffleCards as $index => $cardRows}
+{*								<li n:foreach="$cardRows as $index2 => $card" class="card-container animation-index-delay {if $iterator->counter==2}select{/if} {if $iterator->counter==3}hover-test{/if}  {if $iterator->counter==1}hover-test-2{/if} " data-name="{$card['name']}">*}
+								<li n:foreach="$cardRows as $index2 => $card" data-anim="slide-out-blurred-tr" data-anim-delay="{100*$index*$index2}ms" style="animation-delay: {3000+100*($index+$index2)}ms" class="slide-in-blurred-tl card-container animation-index-delay" data-name="{$card['name']}" data-id="{$card['id']}">
+									<div class="flipper">
+
+{*										{var $cardName = 'images/pexeso/cards/' . $card['imgFront'] . '.png'}*}
+{*										{var $cardBackName = 'images/pexeso/cards/' . $card['imgBack'] . '.png'}*}
+
+
+										{var $cardName = 'resources/pexesoModule/images/cards/' . $card['imgFront'] . '.png'}
+										{var $cardBackName = 'resources/pexesoModule/images/cards/' . $card['imgBack'] . '.png'}
+
+										<img n:image="$cardName, '200x200', shrink_only" alt="{$card['imgFront']}" class="img-responsive invisible">
+										<div class="front">
+											<img n:image="$cardName, '200x200', shrink_only" alt="{$card['imgFront']}" class="img-responsive">
+										</div>
+										<div class="back">
+											<img n:image="$cardBackName, '200x200', shrink_only" alt="{$card['imgBack']}" class="img-responsive">
+										</div>
+									</div>
+								</li>
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+
+				<div id="col-last" class="col-md-2 col-xs-12 p-0">
+					<div id="swap-text">
+						<img n:image="'resources/pexesoModule/images/base/otocte.png', '200x200', shrink_only" alt="otočte" class="img-responsive">
+						<img n:image="'resources/pexesoModule/images/base/najdete_vsechny.png', '185x100', fit" alt="najdete je vsechny" class="img-responsive index-img">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="part-footer">
+			<div class="part-footer-content text-center">
+				<div class="row">
+					<div class="col-md-offset-2 col-md-8 col-sm-12">
+						<div class="result hidden">
+							<div n:foreach="$cards as $name => $card" class="benefit benefit-{$name}">
+								<div class="benefit-img">
+{*									{var $benefit = "images/pexeso/benefits/benefit-{$name}.png"}*}
+									{var $benefit = "resources/pexesoModule/images/benefits/benefit-{$name}.png"}
+									<img n:image="$benefit" alt="benefit {$name}">
+								</div>
+								<div class="benefit-txt">
+{*									<h3>{$card->header}<br><small>{$card->description}</small></h3>*}
+									<h3>{$card->header}</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bottom-box">
+				<div class="row">
+					<div class="_col-footer col-md-offset-2 col-md-8 col-sm-12">
+						{capture $link}<a target="_blank" class="text-info" rel="nofollow" href="{_pexeso.rules_url}">{_pexeso.zde}</a>{/capture}
+						<p class="text-info text-description description">{_pexeso.soutez_probiha|noescape}</p>
+						<p class="text-info text-description about arrow-next">{_pexeso.pravidla_najdete, ['link' => $link]|noescape}</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</section>
+
+{*	<script type="text/javascript">DukascopyApplet = {"type":"online_news","params":{"header":false,"borders":false,"defaultLanguage":"cs","availableLanguages":["ar","bg","cs","de","en","es","fa","fr","he","hu","it","ja","ms","pl","pt","ro","ru","sk","sv","th","uk","zh"],"newsCategories":["finance","forex","stocks","company_news","commodities"],"width":"100%","height":"500","adv":"popup"}};</script><script type="text/javascript" src="https://freeserv-static.dukascopy.com/2.0/core.js"></script>*}
+
+	<script>
+		(function (window, undefined) {
+			document.addEventListener("onApplication", function(e) {
+				var Application = e.detail.application;
+
+				Application.config['selectedTotalCount'] = {$cardsOnPage};
+				// Application.config['selectedTotalCount'] = 4;
+				Application.config['pairIndexNames'] = {$gtmCardIndexNames};
+				Application.config['pairNames'] = {$gtmCardNames};
+				Application.config['gtmBenefitNames'] = {$gtmBenefitNames};
+				Application.config['gtmBenefitDescriptions'] = {$gtmBenefitDescriptions};
+			});
+
+		})(window);
+	</script>
+
+{/block}
+
+{*
+{block extraScripts}
+{include parent}
+	<script>
+        (function($, undefined) {
+            $(function () {
+                Application.config['selectedTotalCount'] = {$cardsOnPage};
+                Application.config['pairIndexNames'] = {$gtmCardIndexNames};
+                Application.config['pairNames'] = {$gtmCardNames};
+            });
+        })(jQuery);
+	</script>
+{/block}
+*}

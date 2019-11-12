@@ -1,0 +1,93 @@
+{block headerTitle}Nastavení karet pexesa{/block}
+{block headerSmallTitle} front, back, benefity... {/block}
+
+{block breadcrumb}
+<li><a n:href=":Cms:Dashboard:"><i class="fa fa-dashboard"></i> {_admin.home}</a></li>
+<li><a n:href=":Cms:Pexeso:Cards:"><i class="fa fa-list-ol"></i> list karet</a></li>
+<li class="active">karta {$entity->name}</li>
+{/block}
+
+{block content}
+<div class="box box-info box-solid">
+	<div class="box-header with-border">
+		<h3 class="box-title">Karta ({$entity->name})</h3>
+		<div class="box-tools">
+			<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		</div>
+	</div>
+	<div class="box-body">
+
+		{snippet form}
+		{form cardForm}
+			<div class="row" style="display: flex; flex-flow: row wrap; justify-content: center;">
+				<div n:foreach="$imageEntities as $key => $imageEntity" class="col-md-3">
+					<div class="box box-primary box-solid">
+						<div class="box-header with-border">
+							<h3 class="box-title">{$key}</h3>
+
+							<div class="box-tools pull-right">
+								{*<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>*}
+							</div>
+							<!-- /.box-tools -->
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body text-center">
+							<a href="{$basePath}/media/{$this->_imgStorage->fromIdentifier($imageEntity->identifier)->identifier}" data-lightbox="{$imageEntity->namespace}" data-title="{$imageEntity->description}" class="inline-block">
+								<img n:img="$imageEntity->identifier, '250x250', shrink_only" class="inline-block img-responsive">
+							</a>
+							{input $key class=>'inline-block text-center'}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					{label name /}
+				</div>
+				<div class="col-sm-10">
+					{input name}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					{label gtmName /}
+				</div>
+				<div class="col-sm-10">
+					{input gtmName}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					{label header /}
+				</div>
+				<div class="col-sm-10">
+					{input header}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					{label description /}
+				</div>
+				<div class="col-sm-10">
+					{input description}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					{label active /}
+				</div>
+				<div class="col-sm-10">
+					{input active}
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					{input send}
+				</div>
+			</div>
+		{/form}
+		{/snippet}
+	</div>
+</div>

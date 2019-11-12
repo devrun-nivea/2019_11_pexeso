@@ -1,0 +1,58 @@
+@base-image-path: "../pexesoModule/images/";
+
+.card(@image) {
+  //background-image: url("@{base-image-path}/@{image}");
+  background-image: data-uri("@{base-image-path}/@{image}");
+  .width( image-width(@image) );
+  .height( image-height(@image) );
+}
+
+.front {
+  .card {
+    &.card-a1 {.card("cards/j1-front.png");} // ok
+    &.card-a2 {.card("cards/j2-front.png");} // ok
+    &.card-b1 {.card("cards/i1-front.png");} // ok
+    &.card-b2 {.card("cards/i2-front.png");} // ok
+    &.card-c1 {.card("cards/h1-front.png");} // ok
+    &.card-c2 {.card("cards/h2-front.png");} // ok
+    &.card-d1 {.card("cards/g1-front.png");} // ok
+    &.card-d2 {.card("cards/g2-front.png");} // ok
+    &.card-e1 {.card("cards/f1-front.png");} // ok
+    &.card-e2 {.card("cards/f2-front.png");} // ok
+    &.card-f1 {.card("cards/e1-front.png");} // ok
+    &.card-f2 {.card("cards/e2-front.png");} // ok
+    &.card-g1 {.card("cards/d1-front.png");} // ok
+    &.card-g2 {.card("cards/d2-front.png");} // ok
+    &.card-h1 {.card("cards/c1-front.png");} // ok
+    &.card-h2 {.card("cards/c2-front.png");} // ok
+    &.card-i1 {.card("cards/b1-front.png");} // ok
+    &.card-i2 {.card("cards/b2-front.png");} // ok
+    &.card-j1 {.card("cards/a1-front.png");} // ok
+    &.card-j2 {.card("cards/a2-front.png");} // ok
+  }
+}
+
+.back {
+  .card {
+    &.card-a1 {.card("cards/j1-back.png");} // ok
+    &.card-a2 {.card("cards/j2-back.png");} // ok
+    &.card-b1 {.card("cards/i1-back.png");} // ok
+    &.card-b2 {.card("cards/i2-back.png");} // ok
+    &.card-c1 {.card("cards/h1-back.png");} // ok
+    &.card-c2 {.card("cards/h2-back.png");} // ok
+    &.card-d1 {.card("cards/g1-back.png");} // ok
+    &.card-d2 {.card("cards/g2-back.png");} // ok
+    &.card-e1 {.card("cards/f1-back.png");} // ok
+    &.card-e2 {.card("cards/f2-back.png");} // ok
+    &.card-f1 {.card("cards/e1-back.png");} // ok
+    &.card-f2 {.card("cards/e2-back.png");} // ok
+    &.card-g1 {.card("cards/d1-back.png");} // ok
+    &.card-g2 {.card("cards/d2-back.png");} // ok
+    &.card-h1 {.card("cards/c1-back.png");} // ok
+    &.card-h2 {.card("cards/c2-back.png");} // ok
+    &.card-i1 {.card("cards/b1-back.png");} // ok
+    &.card-i2 {.card("cards/b2-back.png");} // ok
+    &.card-j1 {.card("cards/a1-back.png");} // ok
+    &.card-j2 {.card("cards/a2-back.png");} // ok
+  }
+}

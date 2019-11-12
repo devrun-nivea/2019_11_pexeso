@@ -1,0 +1,39 @@
+<div n:block="detail" class="well well-sm" >
+
+	<h3 class="text-primary">Detail záznamu {$item->inserted|date:"j. n. Y h:m:s"}</h3>
+
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+				<tr>
+					<th>Id</th>
+					<th>Odpověď 1</th>
+					<th>Odpověď 2</th>
+					<th>Odpověď 3</th>
+					<th>Odpověď 4</th>
+				</tr>
+				</thead>
+
+				<tbody>
+				<tr>
+					<td>{$item->id}</td>
+					<td>{if $item->quizOne}{$item->quizOne}{else}žádná{/if}</td>
+					<td>{if $item->quizTwo}{$item->quizTwo}{else}žádná{/if}</td>
+					<td>{if $item->quizThree}{$item->quizThree}{else}žádná{/if}</td>
+					<td>{if $item->quizFour}{$item->quizFour}{else}žádná{/if}</td>
+				</tr>
+				</tbody>
+				{*
+						<tfoot>
+						<tr>
+							<td colspan="2"></td>
+						</tr>
+						</tfoot>
+				*}
+			</table>
+
+		</div>
+	</div>
+
+</div>

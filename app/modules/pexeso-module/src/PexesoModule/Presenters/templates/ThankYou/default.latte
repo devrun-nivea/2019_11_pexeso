@@ -1,0 +1,52 @@
+{*{block title}{_pexeso.thanks.title}{/block}*}
+{*{if $appLayout}{import "../@layout.latte"}{/if}*}
+{if !$presenter->isNiveaAjax()}
+	{block title}{$title}{/block}
+{/if}
+
+{block content|trim}
+	<section class="thanks" data-anim="slide-out-blurred-br">
+		<div class="container">
+			<div class="part-title">
+
+				<div class="box">
+					<p n:article="pexeso.thanks.text1 header simple" class="description text-primary">{article |noescape}</p>
+					<h2 n:article="pexeso.thanks.text1 subHeader simple" class="text-primary">{article |noescape}</h2>
+
+					<div class="bottom-box">
+						<div n:article="pexeso.thanks.text1 perex text" class="tip text-primary">{article |noescape}</div>
+					</div>
+
+				</div>
+
+				{*
+				<div class="bottom-title-box">
+					<img n:image="'resources/pexesoModule/images/thx1-full.jpg', '640x480', shrink_only" alt="thx" class="img-responsive inline-block">
+				</div>
+				*}
+
+			</div>
+			<div class="part-content">
+
+				{include "#teaserMobile.latte"}
+				{include "#teaser.latte"}
+
+				<h2 n:article="pexeso.thanks.text2 header simple" class="title text-primary">{article |noescape}</h2>
+
+				{include "#survey.latte"}
+
+				{*
+				<div class="bottom-box">
+					<p n:if="$locale!=hu" n:article="pexeso.thanks.text2 header simple" class="text-info">{article |noescape}</p>
+				</div>
+				*}
+			</div>
+
+		</div>
+
+	</section>
+
+	<script>
+		dataLayer.push({ 'eventType': 'view', 'pageView': 'pageview', 'eventName': 'thank_you', 'pageName': '/thank-you', 'eventCategory': 'page_view', 'eventAction': 'page_view', 'eventDescription': 'thank you page' });
+	</script>
+{/block}

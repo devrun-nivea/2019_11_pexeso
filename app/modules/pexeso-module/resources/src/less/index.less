@@ -1,0 +1,171 @@
+@basePath: '..';
+
+@import 'fonts';
+@import "nprogress";
+@import "variables";
+@import "../bootstrap/variables";
+@import "mixins";
+
+html {
+  font-size: 62.5%;
+  @media (max-width : 320px) {
+    font-size: 57.5%;
+  }
+  @media (max-width : 280px) {
+    font-size: 50.0%;
+  }
+}
+
+body:not(.edit) {
+  background: #f8f9fd;
+  font-family: NiveaBook,Arial,sans-serif;
+  //font-size: 12px;
+  margin: 0;
+
+  @import 'development';
+}
+
+.campaign-zone .module {
+  padding-bottom: 0;
+
+  > .container {
+    width: 100%;
+  }
+}
+
+
+
+
+.main-wrapper {
+  font-family: @font-family-base;
+  .font-size(13px);
+  line-height: 1.42857143;
+  color: #333333;
+  .padding-top(25px);
+  background: white url("../pexesoModule/images/base/background.jpg") no-repeat top center;
+  background-size: cover;
+  //.background-size(image-width("base/background.jpg"), image-height("base/background.jpg"));
+
+  @media (max-width: @screen-ms-max) {
+    background-image: url("../pexesoModule/images/base/background-mobile.jpg");
+    //background-size: cover;
+  }
+
+  overflow: hidden;
+  min-height: calc(100vh - 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+
+
+  @import (less) '../bootstrap/bootstrap.less';
+
+  // globals
+  //@import 'theme-sestka';
+
+  @import 'helpers';
+  @import "layout";
+  @import "common";
+  @import "decorates";
+  //@import "cards";
+  @import 'animation';
+  @import "nivea-forms";
+  @import "registration";
+  @import "footer";
+
+  // pages
+  @import "homepage";
+  @import "thanks";
+  @import "errors";
+
+  //@import "test";
+
+  &.hu {
+    @import "homepage-hu";
+  }
+
+
+  .link-rules {
+    color: #3151a0;
+    text-decoration: underline;
+    position: relative;
+
+    &:hover {
+      &:after {
+        right: -0.6em;
+
+      }
+    }
+
+    &:after {
+      content: ">";
+      position: absolute;
+      right: -0.5em;
+      top: 0;
+      bottom: 0;
+      transition: right 600ms;
+    }
+
+  }
+
+
+  &.ajax-fade {
+    opacity: 0;
+    transition: opacity 300ms linear;
+    &.in {
+      opacity: 1;
+    }
+  }
+
+
+}
+
+/* support flex-box */
+.flexbox {
+  .main-wrapper {
+    @import "homepage-flex";
+    @import "registration-flex";
+  }
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* no support flex-box */
+.no-flexbox {
+  .main-wrapper {
+    @import "homepage-noflex";
+  }
+}
+
+
+
+/* support preserve 3d */
+.preserve3d {
+  .main-wrapper {
+    @import "cards-preserve3d";
+  }
+}
+
+/* not support preserve 3d */
+.no-preserve3d {
+  .main-wrapper {
+    @import "cards-nopreserve3d";
+  }
+}
+
+
+.no-csstransforms3d {
+  .main-wrapper {
+
+  }
+
+}
+
+
+@import "fixess";

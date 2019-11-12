@@ -1,0 +1,88 @@
+/* entire container, keeps perspective */
+
+.card-container {
+  perspective: 700px;
+  //cursor: pointer;
+  cursor: move;
+
+  &.select,
+  &.selected {
+    cursor: not-allowed;
+  }
+
+
+  /* flip speed goes here */
+  .flipper {
+    position: relative;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    //transform-origin: 50% // 20
+    transform-origin: 30% // 20
+  }
+
+  .front, .back {
+    width: 100%;
+    height: 100%;
+
+    /* hide back of pane during swap */
+    backface-visibility : hidden;
+    //outline: 1px dashed lightblue;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .card {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      max-height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+  }
+
+  /* front pane, placed above back */
+  .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    transform: rotateY(180deg);
+  }
+
+
+  /* flip the pane when hovered */
+  &:hover {
+
+    .flipper {
+      //transform: rotateY(-130deg); //40
+      transform: rotateY(-50deg); //40
+    }
+  }
+
+
+  &.hover .flipper,
+  &.select .flipper,
+  &.selected .flipper {
+    transform: rotateY(-180deg);
+    transform-origin: inherit;
+
+  }
+
+  &.hover-test .flipper {
+    transform: rotateY(-120deg);
+    transform-origin: inherit;
+
+  }
+
+  &.hover-test-2 .flipper {
+    transform: rotateY(-40deg);
+    transform-origin: inherit;
+
+  }
+
+}

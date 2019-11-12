@@ -1,0 +1,222 @@
+{*{block title}{_pexeso.form.title}{/block}*}
+{if !$presenter->isNiveaAjax()}
+{block title}{$title}{/block}
+{/if}
+
+{block content|trim}
+	<section class="registration" data-anim="slide-out-blurred-bl">
+		<div class="container">
+			<div class="frame-play">
+				<div class="part-title">
+					<div class="box">
+
+						<p n:article="pexeso.form.text1 header simple" class="description text-primary">{article |noescape}</p>
+						<h2 n:article="pexeso.form.text1 subHeader simple" class="text-primary">{article |noescape}</h2>
+
+						<div class="bottom-box">
+							<div class="row">
+								<div class="col-sm-offset-1 col-sm-10">
+									<p n:article="pexeso.form.about header text" class="about text-info">{article |noescape}</p>
+									{*<p n:editable="pexeso.frame_play.zaregistrujte_text1" class="about text-info">{_pexeso.frame_play.zaregistrujte_text1|noescape}</p>*}
+								</div>
+
+							</div>
+							{*<p class="about text-info">{_pexeso.frame_play.zaregistrujte_text2}</p>*}
+						</div>
+					</div>
+				</div>
+
+				<div class="part-content img-preload">
+
+					<div class="row">
+						<div class="col-sm-6 decorate-form">
+							<div class="animated bounceInLeft" style="animation-delay: 200ms;">
+								{include registrationForm}
+							</div>
+						</div>
+						<div class="col-sm-6 text-center winner-box">
+							<div class="winner animated bounceInDown" style="animation-delay: 500ms;">
+								<img n:image="'resources/pexesoModule/images/win/primary_txt.png', '640x480', shrink_only" alt="play-win.png" class="img-responsive inline-block">
+							</div>
+							<div class="winner animated bounceInRight" style="animation-delay: 800ms;">
+								<img n:image="'resources/pexesoModule/images/win/secondary_txt.png', '640x480', shrink_only" alt="play-win.png" class="img-responsive inline-block">
+							</div>
+							{*
+							<div class="citate">
+								<img n:img="$photo->getThisPageImage('form\citate')->namespace/$photo->getThisPageImage('form\citate')->filename" alt="{$photo->getThisPageImage('form\citate')->alt}" class="img-responsive inline-block">
+							</div>
+							*}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+        dataLayer.push({ 'eventType': 'view', 'pageView': 'pageview', 'eventName': 'form', 'pageName': '/form', 'eventCategory': 'form_view', 'eventAction': 'form_view', 'eventDescription': 'form view' });
+	</script>
+{/block}
+
+
+{define registrationForm}
+
+	{capture $nextHref}{link ThankYou:|proxyLink}{/capture}
+	{capture $thisHref}{link Form:|proxyLink}{/capture}
+	{capture $ajaxUrl}{link ThankYou:}{/capture}
+
+	{*	{form registrationForm}*}
+	{form registrationForm, data-ajax-url => $ajaxUrl, data-href => $nextHref, data-form-href => $thisHref, data-cache => 'false', action=> ''}
+
+		<div class="alert alert-danger" n:if="$form->hasErrors()">
+			<p n:foreach="$form->errors as $error">{$error}</p>
+		</div>
+
+		{input quizOne}
+
+		{formContainer createdBy}
+			<div class="form-group required">
+				<div class="col-sm-12">
+					{label gender /}
+					<div class="clearfix p-t-7 checkbox">
+						{foreach $form['createdBy']['gender']->items as $key => $label}
+							<div class="col-xs-5 col-ms-4 m-b-5 p-0">
+								<input n:name="gender:$key">
+								<label n:name="gender:$key">{_pexeso.registrationForm.$label}</label>
+							</div>
+						{/foreach}
+					</div>
+
+				</div>
+			</div>
+
+			<div class="form-group required">
+				{if $locale == 'hu'}
+					<div class="col-sm-6">
+						{label lastName /}
+						{input lastName}
+					</div>
+					<div class="col-sm-6">
+						{label firstName /}
+						{input firstName}
+					</div>
+				{else}
+					<div class="col-sm-6">
+						{label firstName /}
+						{input firstName}
+					</div>
+					<div class="col-sm-6">
+						{label lastName /}
+						{input lastName}
+					</div>
+				{/if}
+			</div>
+
+			<div class="form-group required">
+				<div class="col-sm-12">
+					{label email /}
+					{input email}
+				</div>
+			</div>
+
+{*
+			<div class="form-group required">
+				<div class="birth-select">
+
+					{if $locale == 'hu'}
+						<label class="birthday">{_pexeso.registrationForm.birthday}</label>
+						<div class="col-ms-4 col-4">
+							<label class="hidden" n:name="year">&nbsp;</label>
+							{input year}
+						</div>
+						<div class="col-ms-4 col-4">
+							<label n:name="month">&nbsp;</label>
+							{input month}
+						</div>
+						<div class="col-ms-4 col-4">
+							<label n:name="day">&nbsp;</label>
+							{input day}
+						</div>
+					{else}
+						<label class="birthday">{_pexeso.registrationForm.birthday}</label>
+						<div class="col-ms-4 col-4">
+						<label class="hidden" n:name="day">&nbsp;</label>
+							{input day}
+						</div>
+						<div class="col-ms-4 col-4">
+							<label n:name="month">&nbsp;</label>
+							{input month}
+						</div>
+						<div class="col-ms-4 col-4">
+							<label n:name="year">&nbsp;</label>
+							{input year}
+						</div>
+					{/if}
+				</div>
+			</div>
+*}
+
+			<div class="form-group required">
+				<div class="col-sm-6">
+					{label street /}
+					{input street}
+				</div>
+				<div class="col-sm-6">
+					{label strno /}
+					{input strno}
+				</div>
+			</div>
+			<div class="form-group required">
+				<div class="col-sm-6">
+					{label zip /}
+					{input zip}
+				</div>
+				<div class="col-sm-6">
+					{label city /}
+					{input city}
+				</div>
+			</div>
+
+			{*
+				{if $locale==hu}
+				{/if}
+			*}
+
+		{/formContainer}
+
+		<div id="privacy" class="form-group required checkbox-table m-t-30 p-t-7">
+			<div class="col-sm-12">
+				<label n:name="privacy">
+					<input n:name="privacy">
+					<p id="privacy-label" n:article="pexeso.form.privacy header text" class="checkbox-col">{article |noescape}</p>
+				</label>
+			</div>
+
+		</div>
+		<div id="newsletter" class="form-group checkbox-table p-t-7">
+			<div class="col-sm-12 m-b-15">
+				<label n:name="newsletter">
+					<input n:name="newsletter">
+					<p id="newsletter-label" n:article="pexeso.form.newsletter header simple" class="checkbox-col">{article |noescape}</p>
+					{*<span class="checkbox-col">{_pexeso.registrationForm.posílat_newsletter|noescape}</span>*}
+				</label>
+			</div>
+		</div>
+		<div n:ifset="$form['privacy2']" id="privacy2" class="form-group required checkbox-table p-t-7">
+			<div class="col-sm-12 m-b-15">
+				<label n:name="privacy2">
+					<input n:name="privacy2">
+					<p id="privacy-label" n:article="pexeso.form.privacy subHeader text" class="checkbox-col">{article |noescape}</p>
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group m-t-30">
+			<div class="col-sm-12 text-left">
+				{input send}
+			</div>
+		</div>
+
+	{/form}
+
+{/define}

@@ -1,0 +1,87 @@
+translation:
+	dirs: ['%modules.pexeso.path%/resources/translations']
+
+
+services:
+
+	pexeso.presenters.homepage:
+		class: PexesoModule\Presenters\HomepagePresenter
+		tags: [public.presenter]
+
+	pexeso.presenters.form:
+		class: PexesoModule\Presenters\FormPresenter
+		tags: [public.presenter]
+
+	pexeso.presenters.thankyou:
+		class: PexesoModule\Presenters\ThankYouPresenter
+		tags: [public.presenter]
+
+
+
+	cms.pexeso.presenters.result:
+		class: Devrun\CmsModule\PexesoModule\Presenters\ResultPresenter
+		tags: [devrun.presenter, administration: [
+			link: ':Cms:Pexeso:Result:'
+			icon: fa-cubes
+			category: modules.pexeso
+#			category: 'Content'
+			name: messages.modules.pexeso.result
+			description: messages.modules.pexeso.users
+			priority: 15
+		]]
+
+	cms.pexeso.presenters.cards:
+		class: Devrun\CmsModule\PexesoModule\Presenters\CardsPresenter
+		tags: [devrun.presenter, administration: [
+			link: ':Cms:Pexeso:Cards:'
+			icon: fa-gear
+			category: modules.pexeso
+#			category: Content
+			name: messages.modules.pexeso.pack
+			description: messages.modules.pexeso.managing_pack
+			priority: 20
+		]]
+
+#	cms.pexeso.presenters.theme:
+#		class: Devrun\CmsModule\PexesoModule\Presenters\ThemePresenter
+#		setup:
+##			- setTheme('%modules.pexeso.path%/resources/layouts', '%wwwDir%')
+#		tags: [devrun.presenter, administration: [
+#			link: ':Cms:Pexeso:Theme:edit'
+#			icon: fa-themeisle
+#			category: modules.pexeso
+#			name: pexeso.admin.theme.title
+#			description: pexeso.admin.theme.settings
+#			priority: 25
+#		]]
+
+
+	cms.pexeso.controls.questionsGridControl:
+		implement: Devrun\CmsModule\PexesoModule\Controls\IQuestionsGridControlFactory
+		tags: [devrun.control, administration: [
+			category: Activity
+			uri: :Pexeso:Form:default
+			name: Questions
+		]]
+		inject: true
+
+	cms.pexeso.controls.settingsControl:
+		implement: Devrun\CmsModule\PexesoModule\Controls\ISettingsControlFactory
+		tags: [devrun.control, devrun.modal.attachable, administration: [
+			category: PageSettings
+			uri: :Pexeso:Homepage:default
+			name: Options
+			priority: 20
+		]]
+		inject: true
+
+	cms.pexeso.controls.settingsCardsControl:
+		implement: Devrun\CmsModule\PexesoModule\Controls\ISettingsCardsControlFactory
+		tags: [devrun.control, administration: [
+			category: PageSettings
+			uri: :Pexeso:Homepage:default
+			name: Options
+			priority: 30
+		]]
+		inject: true
+

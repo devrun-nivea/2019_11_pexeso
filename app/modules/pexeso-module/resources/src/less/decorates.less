@@ -1,0 +1,153 @@
+#decorates {
+  //display: none;
+  position: relative;
+  .margin-left(60px);
+  .margin-right(60px);
+
+  @media (max-width : @screen-xs-max) {
+    .margin-left(20px);
+    .margin-right(20px);
+  }
+
+  img {
+    position: absolute;
+  }
+
+  .block {
+    .left(-960px);
+    .top(50px);
+  }
+  .coffee {
+    .right(-1170px);
+    .top(270px);
+  }
+  .big-green {
+    top: 0;
+    .right(-190px);
+  }
+  .orange {
+    .left(-440px);
+    .top(590px);
+  }
+  .orange-right {
+    .right(-220px);
+    .top(650px);
+  }
+  .orange-black {
+    .left(-307px);
+    .top(102px);
+  }
+  .orange-orange {
+    .right(-580px);
+    .top(20px);
+  }
+  .green-list2 {
+    .right(-570px);
+    .top(760px);
+  }
+  .green-list3 {
+    .left(-530px);
+    .top(0px);
+  }
+  .green-list4 {
+    .left(-140px);
+    .top(820px);
+  }
+  .white-vase {
+    .left(-1140px);
+    .top(410px);
+  }
+  .yellow-green {
+    .left(-740px);
+    .top(330px);
+  }
+  .yellow-green-right {
+    .right(-520px);
+    .top(420px);
+  }
+  .q10plus {
+    .left(-150px);
+    .top(540px);
+  }
+
+
+
+  @media (min-width: @screen-md-min) {
+
+
+  }
+
+
+
+
+
+
+  @media (max-width: @screen-ms-max) {
+    display: block;
+
+    .q10plus {
+      .top(145px);
+      left : calc(~ '50% + 145px');
+      .width(100px);
+    }
+    .block {
+      .top(75px);
+      left : calc(~ '50% - 435px');
+      .width(150px);
+    }
+    .coffee {
+      .top(55px);
+      left : calc(~ '50% + 205px');
+      .width(200px);
+    }
+    .green-list2 {
+      .top(555px);
+      left : calc(~ '50% - 405px');
+      .width(60px);
+    }
+    .green-list3 {
+      .top(1555px);
+      left : calc(~ '50% - 405px');
+      .width(60px);
+    }
+    .green-list4 {
+      .top(700px);
+      left : calc(~ '50% + 300px');
+      .width(60px);
+    }
+    .orange-black {
+      .top(300px);
+      left : calc(~ '50% - 500px');
+      .width(200px);
+    }
+    .orange {
+      .top(700px);
+      left : calc(~ '50% - 400px');
+      .width(100px);
+    }
+    .orange-orange {
+      .top(200px);
+      left : calc(~ '50% + 300px');
+      .width(200px);
+    }
+    .white-vase {
+      .top(800px);
+      left : calc(~ '50% - 450px');
+      .width(200px);
+    }
+    .yellow-green {
+      .top(555px);
+      left : calc(~ '50% + 300px');
+      .width(60px);
+    }
+    .big-green {
+      .top(1700px);
+      left : calc(~ '50% + 300px');
+      .width(60px);
+    }
+
+
+  }
+
+
+}

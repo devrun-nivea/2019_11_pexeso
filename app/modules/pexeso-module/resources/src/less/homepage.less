@@ -1,0 +1,438 @@
+&.hu {
+  .homepage {
+
+    #swap-text {
+      .max-width(image-width("base/otocte-hu.png"));
+
+      @media (max-width : @screen-sm-max) {
+        .max-width(image-width("base/otocte-hu.png") + image-width("base/otocte-arrow_high.png") / 2 );
+        .padding-top(image-height("base/otocte-arrow_high.png") - 0px );
+      }
+    }
+
+
+    #top-help {
+      .how-help {
+        @media (min-width : @screen-md-min) {
+          .left(-178px);
+        }
+        @media (max-width : @screen-xs-max) {
+          padding-right : 16.7vw;
+        }
+      }
+    }
+
+  }
+}
+
+
+.homepage {
+
+  //animation-duration: 2s;
+  //animation-delay: 2s;
+
+  .part-title {
+    margin-bottom: 0.5rem;
+
+    @media (min-width : @screen-ms-min) and (max-width : @screen-sm-max) {
+      .margin-left(60px);
+      .margin-right(60px);
+    }
+    @media (max-width : @screen-xs-max) {
+      .margin-left(20px);
+      .margin-right(20px);
+    }
+  }
+
+
+  .animation-index-delay {
+    &:nth-child(1) {
+      animation-delay: 100ms;
+    }
+    &:nth-child(2) {
+      animation-delay: 200ms;
+    }
+    &:nth-child(3) {
+      animation-delay: 300ms;
+    }
+    &:nth-child(4) {
+      animation-delay: 400ms;
+    }
+    &:nth-child(5) {
+      animation-delay: 500ms;
+    }
+    &:nth-child(6) {
+      animation-delay: 600ms;
+    }
+    &:nth-child(7) {
+      animation-delay: 700ms;
+    }
+    &:nth-child(8) {
+      animation-delay: 800ms;
+    }
+    &:nth-child(9) {
+      animation-delay: 900ms;
+    }
+    &:nth-child(10) {
+      animation-delay: 1000ms;
+    }
+    &:nth-child(11) {
+      animation-delay: 1100ms;
+    }
+    &:nth-child(12) {
+      animation-delay: 1200ms;
+    }
+    &:nth-child(13) {
+      animation-delay: 1300ms;
+    }
+    &:nth-child(14) {
+      animation-delay: 1400ms;
+    }
+    &:nth-child(15) {
+      animation-delay: 1500ms;
+    }
+    &:nth-child(16) {
+      animation-delay: 1600ms;
+    }
+    &:nth-child(17) {
+      animation-delay: 1700ms;
+    }
+    &:nth-child(18) {
+      animation-delay: 1800ms;
+    }
+    &:nth-child(19) {
+      animation-delay: 1900ms;
+    }
+    &:nth-child(20) {
+      animation-delay: 2000ms;
+    }
+
+
+  }
+
+
+  /*
+   * switch images
+   */
+  .index-img,
+  .find-help {
+    display: none;
+  }
+
+  .find-help {
+    display: none;
+  }
+
+  .index-1 {
+    #swap-text {
+      @media (max-width : @screen-sm-max) {
+        display: none;
+      }
+
+
+      img {
+        display : none;
+      }
+
+      .index-img {
+        display: block;
+        .padding-top(60px);
+      }
+    }
+
+    .find-help {
+      margin: 0 auto;
+
+      @media (max-width : @screen-sm-max) {
+        display : block;
+
+        .find-box {
+          .padding-right(image-width("base/jak_na_to-arrow-high.png") + 10px);
+
+          @media (max-width : @screen-xs-max) {
+            padding-right : 13.7vw;
+          }
+
+          &:before {
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+
+            right: 0;
+            top: inherit;
+            bottom: 0;
+
+            @media (min-width : @screen-md-min) {
+              background-image: url("../pexesoModule/images/base/jak_na_to-arrow-high.png");
+              .width(image-width("base/jak_na_to-arrow-high.png"));
+              .height(image-height("base/jak_na_to-arrow-high.png"));
+            }
+            @media (max-width : @screen-sm-max) {
+              background-image: url("../pexesoModule/images/base/jak_na_to-arrow-low.png");
+            }
+            @media (min-width : @screen-ms-min) and (max-width : @screen-sm-max) {
+              .width(image-width("base/jak_na_to-arrow-low.png"));
+              .height(image-height("base/jak_na_to-arrow-low.png"));
+            }
+            @media (max-width : @screen-xs-max) {
+              width: 13.7vw;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .turn-help, .how-help {
+      display: none !important;
+    }
+
+  }
+
+
+  #cards {
+    .col-card {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      @media (max-width : @screen-xs-max) {
+        padding: 0;
+      }
+    }
+
+
+    li {
+      list-style: none;
+      z-index: 5;
+
+      width: 25%;
+      @media (max-width : @screen-ms-max) {
+        width : 33.3333%;
+      }
+
+    }
+
+  }
+
+
+
+  #top-help {
+
+    .how-help {
+      position: absolute;
+      .top(-78px);
+      .left(-178px);
+    }
+
+    .turn-help {
+      display: none;
+    }
+
+    .how-box, .turn-box, .find-box {
+      position : relative;
+      display  : inline-block;
+
+      &:before {
+        content  : " ";
+        position : absolute;
+        top      : 0;
+        right    : 0;
+        bottom   : 0;
+        height   : auto;
+      }
+
+      img {
+        display : inline-block;
+      }
+    }
+
+    .how-box {
+      .padding-right(image-width("base/jak_na_to-arrow-high.png") + 10px);
+
+      &:before {
+        background      : url("../pexesoModule/images/base/jak_na_to-arrow-high.png") no-repeat center;
+        background-size : 100%;
+        .width(image-width("base/jak_na_to-arrow-high.png"));
+        .top(-45px);
+        .right(26px);
+
+
+        animation-name: rotateInDownLeft;
+        animation-delay: 3s;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+
+      }
+    }
+
+
+    @media (max-width : @screen-sm-max) {
+      position : relative;
+      .margin-top(25px);
+      .margin-bottom(35px);
+
+      .how-help {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .turn-help {
+        display: inline-block;
+      }
+
+
+      .how-box {
+        .padding-right(image-width("base/jak_na_to-arrow-high.png") + 10px);
+
+        @media (max-width : @screen-xs-max) {
+          padding-right : 13.7vw;
+        }
+
+        &:before {
+          background-repeat: no-repeat;
+          background-position: center top;
+          background-size: 100% 100%;
+
+          right: 0;
+          top: inherit;
+          bottom: 0;
+
+          @media (min-width : @screen-md-min) {
+            background-image: url("../pexesoModule/images/base/jak_na_to-arrow-high.png");
+            .width(image-width("base/jak_na_to-arrow-high.png"));
+            .height(image-height("base/jak_na_to-arrow-high.png"));
+          }
+          @media (max-width : @screen-sm-max) {
+            background-image: url("../pexesoModule/images/base/jak_na_to-arrow-low.png");
+            //.width(image-width("base/jak_na_to-arrow-low.png"));
+            width: 13.7vw;
+            .height(image-height("base/jak_na_to-arrow-low.png"));
+          }
+
+        }
+      }
+
+    }
+  }
+
+
+  #swap-text {
+    .max-width(image-width("base/otocte.png"));
+    //.padding-top(image-height("otocte-arrow_high.png") + 20px );
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    animation-delay: 1500ms;
+
+    @media (max-width : @screen-sm-max) {
+      .max-width(image-width("base/otocte.png") + image-width("base/otocte-arrow_high.png") / 2 );
+      .padding-right( (image-width("base/otocte-arrow_high.png") / 2) );
+      .padding-top(image-height("base/otocte-arrow_high.png") - 15px );
+    }
+
+
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: contain;
+
+      position: absolute;
+      .top(-80px);
+      right : 0;
+      left  : 0;
+      height: 100%;
+      //.width(image-width("otocte-arrow_high.png"));
+      .max-height(image-height("base/otocte-arrow_high.png"));
+
+      animation-name: rotateInDownRight;
+      animation-delay: 3.5s;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+
+      @media (min-width : @screen-md-min) {
+        background-image : url("../pexesoModule/images/base/otocte-arrow_high.png");
+      }
+      @media (max-width : @screen-sm-max) {
+        background-image : url("../pexesoModule/images/base/otocte-arrow_low.png");
+        background-size: 100% 100%;
+        top : 0;
+        left : inherit;
+        .width(image-width("base/otocte-arrow_low.png"));
+      }
+    }
+
+  }
+
+
+
+  .result {
+    background: url("../pexesoModule/images/benefits/benefitbg.png") no-repeat top center;
+    .height(139px);
+    background-size: 100% 100%;
+    width: 100%;
+
+    .benefit {
+      display: none;
+      width: 100%;
+
+      &.animated {
+        display: table;
+      }
+    }
+
+    .benefit-img, .benefit-txt {
+      display: table-cell;
+    }
+    .benefit-img {
+      width: 30%;
+      .height(124px);
+      position: relative;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 1em;
+
+      img {
+        .max-height(130px);
+        max-width: 100%;
+        position: relative;
+        .top(10px);
+      }
+    }
+
+    .benefit-txt {
+      width: 70%;
+      padding-left: 1em;
+      padding-right: 1em;
+      vertical-align: middle;
+      text-align: left;
+    }
+
+
+
+    h3 {
+      .font-size(24px);
+      text-transform: uppercase;
+      color: @brand-primary;
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-family: @font-family-nivea-book;
+
+      strong {
+        font-family: @font-family-nivea-medium;
+      }
+
+      @media (max-width : @screen-ms-max) {
+        .font-size(19px);
+      }
+
+    }
+
+
+  }
+
+
+}

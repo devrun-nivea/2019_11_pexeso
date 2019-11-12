@@ -1,0 +1,54 @@
+<div id="teasersMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+        <div class="item active">
+            <a target="_blank" href="{_pexeso.thanks.teaser1.link}"
+               onclick="dataLayer.push({ 'eventType': 'click', 'pageView': 'click', 'eventName': 'click_to_link', 'pageName': '/thank-you', 'eventCategory': 'click', 'eventAction': 'first_link', 'eventDescription': 'click to first link', 'eventValue': '{$control->translator->translate('pexeso.thanks.teaser1.link')|noescape}' });"
+               class="thx-teaser with-3d-shadow">
+                <span class="art-img">
+                    <img n:image="'resources/pexesoModule/images/teaser/thx1.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+                </span>
+                <span class="info"><span class="info-center">{_pexeso.thanks.teaser1.text|noescape}</span></span>
+                <span class="btn btn-lg btn-primary">{_pexeso.thanks.vice}</span>
+            </a>
+        </div>
+
+        <div class="item">
+            <a target="_blank" href="{_pexeso.thanks.teaser2.link}"
+               onclick="dataLayer.push({ 'eventType': 'click', 'pageView': 'click', 'eventName': 'click_to_link', 'pageName': '/thank-you', 'eventCategory': 'click', 'eventAction': 'second_link', 'eventDescription': 'click to second link', 'eventValue': '{$control->translator->translate('pexeso.thanks.teaser2.link')|noescape}' });"
+               class="thx-teaser with-3d-shadow">
+                <span class="art-img">
+                    <img n:image="'resources/pexesoModule/images/teaser/thx2.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+                </span>
+                <span class="info"><span class="info-center">{_pexeso.thanks.teaser2.text|noescape}</span></span>
+                <span class="btn btn-lg btn-primary">{_pexeso.thanks.vice}</span>
+            </a>
+        </div>
+
+        <div class="item">
+            <a href="{link Homepage:|proxyLink}" data-ajax-url="{link Homepage:}"
+               class="ajax-page thx-teaser with-3d-shadow">
+                <span class="art-img">
+                    <img n:image="'resources/pexesoModule/images/teaser/thx3.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+                </span>
+                <span class="info"><span class="info-center">{_pexeso.thanks.teaser3.text|noescape}</span></span>
+                <span class="btn btn-lg btn-primary">{_pexeso.thanks.vice}</span>
+            </a>
+        </div>
+    </div>
+    <ol class="carousel-indicators">
+        <li data-target="#teasersMobile" data-slide-to="0" class="active"></li>
+        <li data-target="#teasersMobile" data-slide-to="1"></li>
+        <li data-target="#teasersMobile" data-slide-to="2"></li>
+    </ol>
+
+    {*
+    <a class="left carousel-control" href="#teasersMobile" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#teasersMobile" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    *}
+</div>

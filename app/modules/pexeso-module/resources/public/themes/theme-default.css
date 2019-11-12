@@ -1,0 +1,28 @@
+/*
+ * color
+ */
+.main-wrapper.theme-default {
+  background-image: url("../../../images/pexeso/theme-default/background.jpg?v=1552487953");
+}
+.main-wrapper.theme-default .text-primary {
+  color: #00136f;
+}
+.main-wrapper.theme-default .text-info {
+  color: #3151a0;
+}
+.main-wrapper.theme-default .homepage #cards li {
+  width: 20%;
+}
+.main-wrapper.theme-default .test {
+  color: #3151a0;
+  background-color: #00136f;
+  padding: 10px;
+  background-image: url("../../../images/pexeso/theme-default/background.jpg?v=1552487953");
+}
+.preserve3d .main-wrapper.theme-default .card-container {
+  -webkit-perspective: 650px;
+  perspective: 650px;
+}
+.preserve3d .main-wrapper.theme-default .card-container .flipper {
+  transition-duration: 650ms;
+}

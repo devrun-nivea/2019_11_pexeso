@@ -1,0 +1,98 @@
+.form-horizontal {
+
+  .form-control {
+    height: 37px;
+    border-radius: 0;
+    border-color: #cdcdcd;
+    font-size: 13px;
+    color: #333;
+  }
+
+
+  label {
+    font-weight: normal;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  input[type="submit"], button[type="submit"] {
+    padding: 10px 82px;
+
+    @media (max-width : @screen-sm-max) {
+      width : 100%;
+    }
+  }
+
+
+  .birth-select {
+    label.birthday {
+      display: block;
+      .padding-left(@grid-gutter-width / 2);
+      .padding-right(@grid-gutter-width / 2);
+    }
+
+    [class*='col-'] label {
+      @media (min-width : @screen-ms-min) {
+        display: none;
+      }
+    }
+  }
+
+
+
+
+  .checkbox-table {
+    transition: background-color 800ms;
+
+    label {
+      display: table;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      display: table-cell;
+      vertical-align: text-top;
+      margin: 0 1em 0 0;
+      .width(16px);
+    }
+
+    .checkbox-col {
+      display: table-cell;
+      vertical-align: text-top;
+
+    }
+
+    .help-block {
+      margin-left: calc(~ '1em + 16px');
+    }
+
+    &.has-error {
+      background-color: rgba(200, 100, 100, 0.05);
+      border-radius: 5px;
+    }
+
+
+  }
+
+  .select2-container .select2-selection--single {
+    height: 37px;
+  }
+
+
+  .select2-container--default .select2-selection--single {
+    border-radius: 0;
+    border-color: #cdcdcd;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 37px;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    height: 37px;
+    line-height: 37px;
+  }
+
+
+}

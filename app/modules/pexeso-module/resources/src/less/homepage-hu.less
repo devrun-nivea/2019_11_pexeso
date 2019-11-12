@@ -1,0 +1,24 @@
+#top-help {
+  .how-box {
+    .padding-right(image-width("base/jak_na_to-arrow-hu-high.png") + 10px);
+    @media (max-width : @screen-sm-max) {
+      .padding-right(image-width("base/jak_na_to-arrow-hu-high.png") + 10px);
+    }
+
+    &:before {
+      background-image: url("../pexesoModule/images/base/jak_na_to-arrow-hu-high.png");
+      .width(image-width("base/jak_na_to-arrow-hu-high.png"));
+      .top(-135px);
+      .right(-5px);
+    }
+  }
+
+}
+
+
+.homepage #swap-text::before {
+  @media (min-width : @screen-md-min) {
+    .top(-100px);
+  }
+
+}

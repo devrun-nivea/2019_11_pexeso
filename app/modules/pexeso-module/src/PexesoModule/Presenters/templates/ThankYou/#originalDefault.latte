@@ -1,0 +1,188 @@
+{*{block title}{_pexeso.thanks.title}{/block}*}
+{block title}{$title}{/block}
+{block content|trim}
+	<div class="container">
+		<div class="frame-play thanks">
+			<div class="part-title">
+
+				<div class="box">
+					<p n:article="pexeso.thanks.text1 header editor:simple" class="description text-primary">{article |noescape}</p>
+					<h2 n:article="pexeso.thanks.text1 subHeader editor:simple" class="text-primary">{article |noescape}</h2>
+
+					<div class="bottom-box">
+						<div n:article="pexeso.thanks.text1 perex editor:text" class="tip text-primary">{article |noescape}</div>
+					</div>
+
+				</div>
+
+				<div class="bottom-title-box">
+				</div>
+
+			</div>
+			<div class="part-content">
+
+				<div id="teasersMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="item active">
+							<a target="_blank" href="{_pexeso.thanks.teaser1.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'first link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser1.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx1')->namespace/$photo->getThisPageImage('thankTeasers\thx1')->filename, 393x393, EXACT" alt="{$photo->getThisPageImage('thankTeasers\thx1')->alt}" class="img-responsive inline-block">
+							</span>
+								<span class="info"><span class="info-center">{_pexeso.thanks.teaser1.text|noescape}</span></span>
+								<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+							</a>
+						</div>
+
+						<div class="item">
+							<a target="_blank" href="{_pexeso.thanks.teaser2.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'second link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser2.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx2')->namespace/$photo->getThisPageImage('thankTeasers\thx2')->filename, 393x393, EXACT" alt="{$photo->getThisPageImage('thankTeasers\thx2')->alt}" class="img-responsive inline-block">
+								{*<img n:img="$imgTeasers['thx2-mobile']->namespace/$imgTeasers['thx2-mobile']->filename, 393x393, EXACT" class="img-responsive inline-block" alt="{$imgTeasers['thx2-mobile']->alt}">*}
+							</span>
+								<span class="info"><span class="info-center">{_pexeso.thanks.teaser2.text|noescape}</span></span>
+								<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+							</a>
+						</div>
+
+						<div class="item">
+							<a target="_blank" href="{_pexeso.thanks.teaser3.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'third link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser3.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx3')->namespace/$photo->getThisPageImage('thankTeasers\thx3')->filename, 393x393, EXACT" alt="{$photo->getThisPageImage('thankTeasers\thx3')->alt}" class="img-responsive inline-block">
+								{*<img n:img="$imgTeasers['thx3-mobile']->namespace/$imgTeasers['thx3-mobile']->filename, 393x393, EXACT" class="img-responsive inline-block" alt="{$imgTeasers['thx3-mobile']->alt}">*}
+							</span>
+								<span class="info"><span class="info-center">{_pexeso.thanks.teaser3.text|noescape}</span></span>
+								<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+							</a>
+						</div>
+					</div>
+					<ol class="carousel-indicators">
+						<li data-target="#teasersMobile" data-slide-to="0" class="active"></li>
+						<li data-target="#teasersMobile" data-slide-to="1"></li>
+						<li data-target="#teasersMobile" data-slide-to="2"></li>
+					</ol>
+
+					{*
+										<a class="left carousel-control" href="#teasersMobile" data-slide="prev">
+											<span class="glyphicon glyphicon-chevron-left"></span>
+											<span class="sr-only">Previous</span>
+										</a>
+										<a class="right carousel-control" href="#teasersMobile" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right"></span>
+											<span class="sr-only">Next</span>
+										</a>
+					*}
+				</div>
+
+
+				<div id="teasers" class="row">
+					<div class="col-sm-4 text-center">
+
+						<a target="_blank" href="{_pexeso.thanks.teaser1.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'first link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser1.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx1')->namespace/$photo->getThisPageImage('thankTeasers\thx1')->filename, 306x315, FIT" alt="{$photo->getThisPageImage('thankTeasers\thx1')->alt}" class="img-responsive inline-block">
+								{*<img n:img="$imgTeasers['thx1-mobile']->namespace/$imgTeasers['thx1-mobile']->filename, 306x315, EXACT" class="img-responsive inline-block" alt="{$imgTeasers['thx1-mobile']->alt}">*}
+							</span>
+							<span class="info"><span class="info-center">{_pexeso.thanks.teaser1.text|noescape}</span></span>
+							<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+						</a>
+					</div>
+					<div class="col-sm-4 text-center">
+						<a target="_blank" href="{_pexeso.thanks.teaser2.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'second link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser2.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx2')->namespace/$photo->getThisPageImage('thankTeasers\thx2')->filename, 306x315, FIT" alt="{$photo->getThisPageImage('thankTeasers\thx2')->alt}" class="img-responsive inline-block">
+								{*<img n:img="$imgTeasers['thx2-mobile']->namespace/$imgTeasers['thx2-mobile']->filename, 306x315, FIT" class="img-responsive inline-block" alt="{$imgTeasers['thx2-mobile']->alt}">*}
+							</span>
+							<span class="info">
+								<span class="info-center">{_pexeso.thanks.teaser2.text|noescape}</span>
+							</span>
+							<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+						</a>
+					</div>
+					<div class="col-sm-4 text-center">
+						<a target="_blank" href="{_pexeso.thanks.teaser3.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'third link', 'eventValue': {$control->translator->translate('pexeso.thanks.teaser3.link')|noescape} });" class="thx-teaser with-3d-shadow">
+							<span class="art-img">
+								<img n:img="$photo->getThisPageImage('thankTeasers\thx3')->namespace/$photo->getThisPageImage('thankTeasers\thx3')->filename, 306x315, FIT" alt="{$photo->getThisPageImage('thankTeasers\thx3')->alt}" class="img-responsive inline-block">
+								{*<img n:img="$imgTeasers['thx3-mobile']->namespace/$imgTeasers['thx3-mobile']->filename, 306x315, FIT" class="img-responsive inline-block" alt="{$imgTeasers['thx3-mobile']->alt}">*}
+							</span>
+							<span class="info"><span class="info-center">{_pexeso.thanks.teaser3.text|noescape}</span></span>
+							<span class="btn btn-lg btn-transparent">{_pexeso.thanks.vice}</span>
+						</a>
+					</div>
+				</div>
+
+				<h2 n:editable="pexeso.thanks.survey_title" class="title text-primary">{_pexeso.thanks.survey_title|noescape}</h2>
+				<div n:article="pexeso.thanks.text2 content editor:simple" class="text-primary">{article |noescape}</div>
+
+				<div id="surveys" class="row">
+					<div class="col-sm-6 col-md-4 text-center p-0-ms-max">
+						<div class="survey">
+							<div class="survey-img">
+								<div class="art-img">
+									<span class="no-overflow">
+										<img n:img="$photo->getThisPageImage('thankSurveys\thx1')->namespace/$photo->getThisPageImage('thankSurveys\thx1')->filename, 306x185, FIT" alt="{$photo->getThisPageImage('thankSurveys\thx1')->alt}" class="img-responsive inline-block">
+										{*<img n:img="$imgSurveys['teaser1']->namespace/$imgSurveys['teaser1']->filename, 306x185, EXACT" class="img-responsive inline-block" alt="{$imgSurveys['teaser1']->alt}">*}
+										{*<img src="{$proxyUrl}{$basePath}/images/teaser1.jpg" class="img-responsive">*}
+									</span>
+								</div>
+							</div>
+							<div class="survey-text">
+								<a target="_blank" href="{_pexeso.thanks.survey1.link}" onclick="dataLayer.push({  'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'fourth link', 'eventValue': {$control->translator->translate('pexeso.thanks.survey1.link')|noescape} });">
+									<span class="info"><span class="info-center"><strong>{_pexeso.thanks.survey1.text}</strong></span></span>
+									<span class="btn btn-lg btn-primary">{_pexeso.thanks.reseni}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 text-center p-0-ms-max">
+						<div class="survey">
+							<div class="survey-img">
+								<div class="art-img">
+									<span class="no-overflow">
+										<img n:img="$photo->getThisPageImage('thankSurveys\thx2')->namespace/$photo->getThisPageImage('thankSurveys\thx2')->filename, 306x185, FIT" alt="{$photo->getThisPageImage('thankSurveys\thx2')->alt}" class="img-responsive inline-block">
+										{*<img n:img="$imgSurveys['teaser2']->namespace/$imgSurveys['teaser2']->filename, 306x185, EXACT" class="img-responsive inline-block" alt="{$imgSurveys['teaser2']->alt}">*}
+										{*<img src="{$proxyUrl}{$basePath}/images/teaser2.jpg" class="img-responsive">*}
+									</span>
+								</div>
+							</div>
+							<div class="survey-text">
+								<a target="_blank" href="{_pexeso.thanks.survey2.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'fifth link', 'eventValue': {$control->translator->translate('pexeso.thanks.survey2.link')|noescape} });">
+									<span class="info"><span class="info-center"><strong>{_pexeso.thanks.survey2.text}</strong></span></span>
+									<span class="btn btn-lg btn-primary">{_pexeso.thanks.reseni}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 text-center p-0-ms-max">
+						<div class="survey">
+							<div class="survey-img">
+								<div class="art-img">
+									<span class="no-overflow">
+										<img n:img="$photo->getThisPageImage('thankSurveys\thx3')->namespace/$photo->getThisPageImage('thankSurveys\thx3')->filename, 306x185, FIT" alt="{$photo->getThisPageImage('thankSurveys\thx3')->alt}" class="img-responsive">
+										{*<img n:img="$imgSurveys['teaser3']->namespace/$imgSurveys['teaser3']->filename, 306x185, EXACT" class="img-responsive inline-block" alt="{$imgSurveys['teaser3']->alt}">*}
+										{*<img src="{$proxyUrl}{$basePath}/images/teaser3.jpg" class="img-responsive">*}
+									</span>
+								</div>
+							</div>
+							<div class="survey-text">
+								<a target="_blank" href="{_pexeso.thanks.survey3.link}" onclick="dataLayer.push({ 'ga_event': 'click to link', 'pageview': '/thank-you', 'eventCategory': 'click', 'eventAction': 'sixth link', 'eventValue': {$control->translator->translate('pexeso.thanks.survey3.link')|noescape} });">
+									<span class="info"><span class="info-center"><strong>{_pexeso.thanks.survey3.text}</strong></span></span>
+									<span class="btn btn-lg btn-primary">{_pexeso.thanks.reseni}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bottom-box">
+					<p n:if="$locale!=hu" n:editable="pexeso.thanks.thx_text2" class="text-info">{_pexeso.thanks.thx_text2|noescape}</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+        dataLayer.push({ 'ga_event': 'thank you', 'pageview': '/thank-you', 'eventCategory': 'page view', 'eventAction': 'page view' });
+	</script>
+{/block}

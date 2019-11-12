@@ -1,0 +1,41 @@
+{block headerTitle}Nastavení grafiky pexesa{/block}
+{block headerSmallTitle} front, form, thanks... {/block}
+
+{block content}
+<div class="box box-primary">
+	<div class="box-header with-border">
+		<h3 class="box-title">Grafické téma</h3>
+		<div class="box-tools pull-right">
+			<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		</div>
+	</div>
+
+	<div class="box-body">
+		<div class="row page-header">
+			<div class="col-md-4 text-center">
+				{img $presenter->getImage(':Pexeso:Homepage:default')->identifier, '340x260'}
+				{*<img src="{$basePath}/images/pexeso-mini.png">*}
+			</div>
+			<div class="col-md-4 text-center">
+				{img $presenter->getImage(':Pexeso:Form:default')->identifier, '340x260'}
+				{*<img src="{$basePath}/images/adventni_kalendar-mini.png">*}
+			</div>
+			<div class="col-md-4 text-center">
+				{img $presenter->getImage(':Pexeso:ThankYou:default')->identifier, '340x260'}
+				{*<img src="{$basePath}/images/pixstop-mini.png">*}
+			</div>
+		</div>
+
+
+		{control packageSelectForm}
+
+		{snippetArea eee}
+		{*{snippet rgr}*}
+
+		{control themeControl}
+		{*{/snippet}*}
+		{/snippetArea}
+
+	</div>
+
+</div>

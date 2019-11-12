@@ -1,0 +1,137 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html class="ie ie8 lte8 lte9 oldie" lang="cs"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9" lang="cs"><![endif]-->
+<!--[if !(IE)]><!--><html class="not-ie" lang="cs"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="cs" http-equiv="Content-language">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta content="Pixman s.r.o." name="author">
+	<link rel="shortcut icon" href="{$basePath}/favicon.png">
+
+	<title n:inner-block="title">{ifset title}{include title|striptags}{else}{_pexeso.title}{/ifset}</title>
+{*	<title>{ifset title}{include title|striptags}{/ifset}{_site.title.$package->name}</title>*}
+
+	{*================== BEGIN BASE CSS STYLE ==================*}
+
+{*	{var $production = true}*}
+
+	{block css}
+	{if $production}
+		<link data-pf-placeholder="head" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/main-pexeso.min.css?rel=1573206067524">
+	{else}
+		{*<!-- build:css {$basePath}/resources/pexesoModule/main-pexeso.min.css -->*}
+		<link rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/animate.css/animate.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/select2/css/select2.css">
+		<link n:if="$production" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/pexeso.css">
+		{*<!-- endbuild -->*}
+		<link n:if="!$production" data-pf-placeholder="head" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/pexeso.css">
+	{/if}
+{*	<link data-pf-placeholder="head" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/themes/{$themeName}.css?v={$themeVersion}">*}
+	{/block}
+
+	{block head}
+	{include "#gtm-head.latte"}
+	{*================== BEGIN BASE JS ==================*}
+{*	<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="application/javascript" data-pf-placeholder="head" src="{$basePath}/resources/pexesoModule/jquery/jquery.min.js"></script>*}
+	{*================== END BASE JS ==================*}
+	{/block}
+</head>
+
+<body class="_debug">
+
+	{block menu}
+	{if $appLayout}
+		{include parent}
+		<li><a n:href="switchAppLayout!">Vzhled soutěže</a></li>
+	{/if}
+	{/block}
+
+
+	<div n:block="body-html" data-pf-placeholder="content" data-pf-sortorder="1" data-pf-options="innerhtml">
+		{*{include "#gtm-body.latte"}*}
+		<div id="soutez" class="{$pageClass}" role="main" data-pf-proxy-url="" data-pf-proxy-base-url="{$proxyBaseUrl}" data-app-base-url="{link Homepage:}" data-logged-in="{$user->isLoggedIn() ? 'true' : 'false'}">
+			{snippet content}
+				{include content}
+			{/snippet}
+		</div>
+	</div>
+
+
+	{block scripts}
+{*		<script type="text/javascript" _data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/jquery-3.1.1.min.js"></script>*}
+		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="application/javascript" data-pf-placeholder="scripts" src="{$basePath}/resources/pexesoModule/jquery/jquery.min.js"></script>
+		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="text/javascript" data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/json2.min.js"></script>
+		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="text/javascript" data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/ProCampaignApiConsumer.js"></script>
+
+		{*================== BEGIN BASE JS ==================*}
+		{if $production}
+			{*<script type="application/javascript" src="{$basePath}/assets/bootstrap/js/bootstrap.js"></script>*}
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/pexeso.min.js?rel=1573206067524"></script>
+{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.nprogress.js"></script>*}
+{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nprogress.js"></script>*}
+{*			<script type="application/javascript" src="{$basePath}/resources/cmsModule/bootstrap/dist/js/bootstrap.js"></script>*}
+		{else}
+{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/carousel.js"></script>*}
+{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.nprogress.js"></script>*}
+{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nprogress.js"></script>*}
+
+			{*<!-- build:js {$basePath}/resources/pexesoModule/pexeso.min.js -->*}
+			<script type="application/javascript" src="{$basePath}/resources/cmsModule/bootstrap/dist/js/bootstrap.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.ajax.js/nette.ajax.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.ajax.js/extensions/diagnostics.dumps.ajax.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/history.ajax.js/history.ajax.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/jquery.smooth-scroll-nivea.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/live-form-validation-nivea.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/select2/js/select2-nivea.js"></script>
+
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/modernizr.js"></script>
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/page.js"></script>
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/pexeso.js"></script>
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/form.js"></script>
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/procampaign.js"></script>
+			{*<!-- endbuild -->*}
+
+			{*<script type="application/javascript" src="{$basePath}/js/nette.nprogress.js"></script>*}
+			{*<script type="application/javascript" src="{$basePath}/js/nprogress.js"></script>*}
+
+		{/if}
+		{*================== END BASE JS ==================*}
+	{/block}
+	{block extraScripts}{/block}
+
+	<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" data-pf-placeholder="scripts">
+		(function($, undefined) {
+
+			ProCampaignForm.init(
+				{
+					'package': {$package->name},
+					'transactionName': {_site.transaction.$package->name.name},
+					'identLong': {_site.transaction.$package->name.identLong},
+					{*'logUrl': {link log!}*}
+				}
+			);
+
+			$(function () {
+				{ifset $scroll}
+				{if $scroll}
+					$.smoothScroll({ scrollTarget: '#soutez' });
+				{/if}
+				{/ifset}
+				{ifset $redirect}
+					Page.switchPage('.redirect', event);
+					console.log("redirect signal");
+				{/ifset}
+			});
+		})(jQuery); //jNIV  test
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{block headerTitle}Nastavení karet pexesa{/block}
+{block headerSmallTitle} front, back, benefity... {/block}
+
+{block breadcrumb}
+	<li n:block="breadcrumbItems"><a n:href=":Cms:Dashboard:"><i class="fa fa-dashboard"></i> {_admin.home}</a></li>
+	<li class="active">editace karet pexesa</li>
+{/block}
+
+{block content}
+{*
+<div class="box box-default collapsed-box">
+	<div class="box-header with-border">
+		<h3 class="box-title">Globální</h3>
+		<div class="box-tools pull-right">
+			<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+		</div>
+	</div>
+
+	<div class="box-body" style="display: none;">
+		<div class="grido">
+			{control settingsControl}
+		</div>
+	</div>
+
+</div>
+*}
+
+<div class="box box-primary box-solid">
+	<div class="box-header with-border">
+		<h3 class="box-title">Karty k nastavení</h3>
+		<div class="box-tools">
+			<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		</div>
+	</div>
+	<div class="box-body">
+		<div class="grido">
+			{control cardsControlGrid}
+		</div>
+
+	</div>
+</div>

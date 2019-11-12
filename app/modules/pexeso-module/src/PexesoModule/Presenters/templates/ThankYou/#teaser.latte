@@ -1,0 +1,38 @@
+<div id="teasers" class="row">
+    <div class="col-sm-4 text-center animated bounceInLeft" style="animation-delay: 400ms">
+        <a target="_blank" href="{_pexeso.thanks.teaser1.link}"
+           onclick="dataLayer.push({ 'eventType': 'click', 'pageView': 'click', 'eventName': 'click_to_link', 'pageName': '/thank-you', 'eventCategory': 'click', 'eventAction': 'first_link', 'eventDescription': 'click to first link', 'eventValue': '{$control->translator->translate('pexeso.thanks.teaser1.link')|noescape}' });"
+           class="thx-teaser with-3d-shadow">
+            <span class="art-img">
+                <img n:image="'resources/pexesoModule/images/teaser/thx1.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+            </span>
+{*            <span class="info"><span n:article="pexeso.thanks.teaser1 header simple" class="info-center">{article |noescape}</span></span>*}
+            <span class="info"><span class="info-center">{_pexeso.thanks.teaser1.text|noescape}</span></span>
+            <span class="btn btn-lg btn-primary">{_pexeso.more_info}</span>
+        </a>
+    </div>
+    <div class="col-sm-4 text-center animated bounceIn" style="animation-delay: 200ms">
+        <a target="_blank" href="{_pexeso.thanks.teaser2.link}"
+           onclick="dataLayer.push({ 'eventType': 'click', 'pageView': 'click', 'eventName': 'click_to_link', 'pageName': '/thank-you', 'eventCategory': 'click', 'eventAction': 'second_link', 'eventDescription': 'click to second link', 'eventValue': '{$control->translator->translate('pexeso.thanks.teaser2.link')|noescape}' });"
+           class="thx-teaser with-3d-shadow">
+            <span class="art-img">
+                <img n:image="'resources/pexesoModule/images/teaser/thx2.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+            </span>
+            <span class="info">
+                <span class="info-center">{_pexeso.thanks.teaser2.text|noescape}</span>
+            </span>
+            <span class="btn btn-lg btn-primary">{_pexeso.more_info}</span>
+        </a>
+    </div>
+    <div class="col-sm-4 text-center animated bounceInRight" style="animation-delay: 400ms">
+        <a href="{link Homepage:|proxyLink}" data-ajax-url="{link Homepage:}"
+{*           onclick="dataLayer.push({ 'eventType': 'click', 'pageView': 'click', 'eventName': 'click_to_link', 'pageName': '/thank-you', 'eventCategory': 'click', 'eventAction': 'third_link', 'eventDescription': 'click to third link', 'eventValue': '{$control->translator->translate('pexeso.thanks.teaser3.link')|noescape}' });"*}
+           class="ajax-page thx-teaser with-3d-shadow">
+            <span class="art-img">
+                <img n:image="'resources/pexesoModule/images/teaser/thx3.jpg', '500x500', shrink_only" alt="thx" class="img-responsive inline-block">
+            </span>
+            <span class="info"><span class="info-center">{_pexeso.thanks.teaser3.text|noescape}</span></span>
+            <span class="btn btn-lg btn-primary">{_pexeso.again}</span>
+        </a>
+    </div>
+</div>
