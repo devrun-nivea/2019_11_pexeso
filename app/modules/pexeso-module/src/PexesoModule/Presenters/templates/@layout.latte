@@ -25,7 +25,7 @@
 
 	{block css}
 	{if $production}
-		<link data-pf-placeholder="head" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/main-pexeso.min.css?rel=1573206067524">
+		<link data-pf-placeholder="head" rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/main-pexeso.min.css?rel=1573558588006">
 	{else}
 		{*<!-- build:css {$basePath}/resources/pexesoModule/main-pexeso.min.css -->*}
 		<link rel="stylesheet" type="text/css" media="screen" href="{$basePath}/resources/pexesoModule/animate.css/animate.min.css">
@@ -66,7 +66,7 @@
 
 
 	{block scripts}
-{*		<script type="text/javascript" _data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/jquery-3.1.1.min.js"></script>*}
+{*		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="text/javascript" data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/jquery-3.1.1.min.js"></script>*}
 		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="application/javascript" data-pf-placeholder="scripts" src="{$basePath}/resources/pexesoModule/jquery/jquery.min.js"></script>
 		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="text/javascript" data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/json2.min.js"></script>
 		<script n:if="!Devrun\CmsModule\Utils\Common::isAdminRequest()" type="text/javascript" data-pf-placeholder="scripts" src="https://consumer.procampaignapi.com/Scripts/ProCampaignApiConsumer.js"></script>
@@ -74,17 +74,17 @@
 		{*================== BEGIN BASE JS ==================*}
 		{if $production}
 			{*<script type="application/javascript" src="{$basePath}/assets/bootstrap/js/bootstrap.js"></script>*}
-			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/pexeso.min.js?rel=1573206067524"></script>
+			<script data-pf-placeholder="scripts" type="application/javascript" src="{$basePath}/resources/pexesoModule/pexeso.min.js?rel=1573558588005"></script>
 {*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.nprogress.js"></script>*}
 {*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nprogress.js"></script>*}
 {*			<script type="application/javascript" src="{$basePath}/resources/cmsModule/bootstrap/dist/js/bootstrap.js"></script>*}
 		{else}
-{*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/carousel.js"></script>*}
 {*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.nprogress.js"></script>*}
 {*			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nprogress.js"></script>*}
 
+{*			<script type="application/javascript" src="{$basePath}/resources/cmsModule/bootstrap/dist/js/bootstrap.js"></script>*}
 			{*<!-- build:js {$basePath}/resources/pexesoModule/pexeso.min.js -->*}
-			<script type="application/javascript" src="{$basePath}/resources/cmsModule/bootstrap/dist/js/bootstrap.js"></script>
+			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/carousel.js"></script>
 			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.ajax.js/nette.ajax.js"></script>
 			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/nette.ajax.js/extensions/diagnostics.dumps.ajax.js"></script>
 			<script type="application/javascript" src="{$basePath}/resources/pexesoModule/history.ajax.js/history.ajax.js"></script>

@@ -101,7 +101,7 @@
         initSmoothScroll: function () {
             // $('article a.cta').smoothScroll();
 
-            $(document).on('click', 'article a.cta', function (e) {
+            $(document).on('click', '.nx-btn-cta', function (e) {
                 e.preventDefault();
                 $.smoothScroll({ scrollTarget: '#soutez' });
             });
@@ -277,7 +277,18 @@
                     var selectedTotalCount = this.config['selectedTotalCount'];
                     // selectedTotalCount = 6; // @todo debug
 
-                    $(element).addClass('selected');
+                    $(element).addClass('selected').addClass(wellClass).one(selectorAnimationEnd, function(e) {
+                        $(this).removeClass(wellClass).off(self.selectorAnimationEnd);
+
+                        var selected = $('.card-container.selected');
+                        if (selected.length === 2) {
+                            $('#play-frame').addClass('index-1');
+
+                        } else if (selected.length === selectedTotalCount) {
+                            // dont use this!
+                        }
+                    });
+
                     selected = $('.card-container.selected');
 
                     $('.part-footer .benefit').removeClass('animated flipInX');
@@ -312,7 +323,7 @@
                     } else if (selected.length === selectedTotalCount) {
                         self.sendGTMWinCards(packageName);
 
-                        $('h2.index-1').addClass('animated rotateOut').one(selectorAnimationEnd, function() {
+                        $('h2.index-1').addClass('animated rotateOut').one(selectorAnimationEnd, function(e) {
                             $(this).removeClass('animated rotateOut').addClass('hidden');
 
                             $('h2.index-2').removeClass('hidden').addClass('animated rotateIn').one(selectorAnimationEnd, function() {
@@ -327,17 +338,6 @@
                                 // $('#play-frame').addClass('blur');
 
                             });
-                        });
-                    }
-
-                    $(element).addClass(wellClass).one(selectorAnimationEnd, function(e) {
-                        $(this).removeClass(wellClass).off(self.selectorAnimationEnd);
-
-                        var selected = $('.card-container.selected');
-                        if (selected.length === 2) {
-                            $('#play-frame').addClass('index-1');
-
-                        } else if (selected.length === selectedTotalCount) {
 
                             setTimeout(function(){
                                 // $('#play-frame').addClass('blur');
@@ -346,17 +346,8 @@
                             }, 500);
 
 
-                            // event to next page
-                            // $(selected).one(selectorAnimationEnd, function() {
-                            // $(element).removeClass(outClass);
-
-
-                            // });
-
-
-                            // $('#play-frame').addClass('blur');
-                        }
-                    });
+                        });
+                    }
 
 
                 }
@@ -443,6 +434,7 @@
         Application.show();
         Application.cardsAnimation();
         Application.showAnimationsAfterLoad();
+        $.smoothScroll({ scrollTarget: '#soutez' });
     });
 
 
