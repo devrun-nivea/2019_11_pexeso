@@ -12,7 +12,6 @@ use Devrun\CmsModule\Entities\PackageEntity;
 use Devrun\ContestModule\Forms\RegistrationForm;
 use Nette\Application\UI\Form;
 use PexesoModule\Entities\ResultEntity;
-use PexesoModule\Forms\IRegistrationFormFactory;
 
 /**
  * Class FormPresenter
@@ -21,9 +20,6 @@ use PexesoModule\Forms\IRegistrationFormFactory;
  */
 class FormPresenter extends BaseAppPresenter
 {
-
-    /** @var IRegistrationFormFactory @inject */
-    public $registrationFormFactoryOld;
 
     /** @var \Devrun\ContestModule\Forms\IRegistrationFormFactory @inject */
     public $registrationFormFactory;
